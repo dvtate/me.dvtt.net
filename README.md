@@ -1,4 +1,3 @@
 # dvtate.github.io
-- My real website is better http://dvtate.com/
-- My main issue with my main sight is that it doesn't have https
-- This will probably be a place to test ideas
+- My real website is better https://dvtate.com/
+- This repo is more to test ideas and dump github related files which I want to be downloadable.
