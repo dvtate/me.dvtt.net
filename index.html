@@ -9,10 +9,19 @@
         <style>
 
             body {
-                min-width: 460;
-                background-color: #22262c; color: lightgrey;
+                color: lightgrey;
                 font-family: 'Open Sans', Helvetica, sans-serif;
+
+                background-color: #20262c;
+                background-attachment: fixed !important;
+                background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #20262c), color-stop(100%, #435));
+                background: -webkit-linear-gradient(#20262c, #435);
+                background: -moz-linear-gradient(#20262c, #435);
+                background: -o-linear-gradient(#20262c, #435);
+                background: -ms-linear-gradient(#20262c, #435);
+                background: linear-gradient(#20262c, #435);
             }
+
 
             h1, h2, h3, h4, h5, h6 {
                 font-family: 'Open Sans Light', 'Open Sans', sans-serif;
@@ -22,23 +31,22 @@
                 font-weight: 200;
             }
 
-            /* */
+
+            /* links */
+            p > a {
+                text-decoration: none;
+                color: #9cf;
+            }
+            p > a:hover {
+                text-decoration: underline;
+                color: #bdf;
+            }
             ul > p > a > img {
                 width: 16px; height: 16px;
                 margin-right: 5px;
             }
 
-            /* links */
-            p > a {
-                text-decoration: none;
-                color: #8af;
-            }
-            p > a:hover {
-                text-decoration: underline;
-                color: #9bf;
-            }
-
-
+            /* desktop support */
             div.main {
                 max-width: 650px;
                 margin: 0 auto;
@@ -46,31 +54,40 @@
                 padding: 0 20px;
             }
 
+            /* bio */
             div.main > table {
                 width: 100%;
             }
-
-            td#avatar img { height: 200px; }
+            td#avatar img {
+                border-radius: 6px;
+                height: 200px;
+            }
             tr, td { padding: 20px; }
-
-
-            td#avatar { position: relative; }
+            td#avatar {
+                position: relative;
+                padding-bottom: 0;
+                vertical-align: center;
+            }
             td#avatar div.border-right {
                 border-left: 2px solid lightgrey;
                 position: absolute;
-                top: 10%;
+                top: 13%;
                 bottom: 0;
                 right: 0;
             }
 
+            /* mobile support */
             @media screen and (max-width:460px) {
+                /* make columns into rows */
 				table tr > * { display: block; }
 				table tr { display: table-cell; }
+                table hr { padding: 0; }
+                /* remove img border */
                 div.border-right {
                     border: 0;
                     display: none;
                 }
-                
+                div.main > hr { display: none; }
 			}
         </style>
     </head><body>
@@ -82,7 +99,7 @@
                         <img src="https://avatars3.githubusercontent.com/u/15305612" />
                         <div class="border-right"></div>
                     </td><td id="about">
-                        <center><h1>Tate's Page</h1></center>
+                        <h1>Tate's Page</h1>
                         <hr/>
                         <p>Tate's full name is Dustin Van Tate Testa. Tate is programming
                             captian for <a href="https://robobibb.github.io" target="_blank">
