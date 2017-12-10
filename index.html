@@ -8,15 +8,33 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
         <style>
             body {
-                background-color: #222; color: lightgrey;
-                font-family: 'Open Sans', X-LocaleSpecific, sans-serif;
+                background-color: #22262c; color: lightgrey;
+                font-family: 'Open Sans', Helvetica, sans-serif;
             }
-            ul p a img {
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Open Sans Light', 'Open Sans', sans-serif;
+            }
+            h1 {
+                font-size: 350%;
+                font-weight: 200;
+            }
+
+            /* */
+            ul > p > a > img {
                 width: 16px; height: 16px;
                 margin-right: 5px;
             }
-            p a { color: lightgrey; }
-            ul p a { text-decoration: none; }
+
+            /* links */
+            p > a {
+                text-decoration: none;
+                color: #8af;
+            }
+            p > a:hover {
+                text-decoration: underline;
+                color: #9bf;
+            }
 
 
             div.main {
@@ -25,23 +43,47 @@
                 position: relative;
                 padding: 0 20px;
             }
+
+            div.main > table {
+                width: 100%;
+            }
+            td#avatar img { height: 200px; }
+            tr, td { padding: 20px; }
+            td#avatar { position: relative; }
+            td#avatar div.border-right {
+                border-left: 2px solid lightgrey;
+                position: absolute;
+                top: 10%;
+                bottom: 0;
+                right: 0;
+            }
         </style>
     </head><body>
 
         <div class="main">
-            <center><h1>Tate's Page</h1></center>
-            <hr/>
-            <p>Tate's full name is Dustin Van Tate Testa. Tate is programming
-                 captian for <a href="https://robobibb.github.io" target="_blank">FRC team 4941 RoboBibb</a>.</p>
+            <table>
+                <tr>
+                    <td id="avatar">
+                        <img src="https://avatars3.githubusercontent.com/u/15305612" />
+                        <div class="border-right"></div>
+                    </td><td id="about">
+                        <center><h1>Tate's Page</h1></center>
+                        <hr/>
+                        <p>Tate's full name is Dustin Van Tate Testa. Tate is programming
+                            captian for <a href="https://robobibb.github.io" target="_blank">
+                            FRC team 4941 RoboBibb</a>.</p>
+                    </td>
+                </tr>
+            </table>
             <hr/>
             <ul>
                 <p><a href="https://github.com/dvtate/" target="_blank"><img src="http://github.com/favicon.ico" />Tate writes Code</a></p>
                 <p><a href="https://t.me/robobibb_bot/" target="_blank"><img src="https://telegram.org/favicon.ico" />Tate makes chat bots</a></p>
                 <p><a href="https://dvtate.com/" target="_blank"><img src="http://github.com/favicon.ico" />Tate makes websites</a></p>
-                <p><a href="https://google.com/+tatetesta" target="_blank"><img src="https://plus.google.com/favicon.ico" />Tate uses Google+ (for now)</a></p>
+                <p><a href="https://google.com/+tatetesta" target="_blank"><img src="https://plus.google.com/favicon.ico" />Tate shares projects on Google+</a></p>
                 <p><a href="https://fb.com/tate.testa" target="_blank"><img src="https://fb.com/favicon.ico" />Tate has friends</a></p>
                 <p><a href="https://www.italki.com/user/2828739" target="_blank"><img src="https://italki.com/favicon.ico" />Tate is a sprognørd</a></p>
-                <p><a href="https://soundcloud.com/dustin-van-tate-testa/" target="_blank"><img src="https://soundcloud.com/favicon.ico" />Tate listens to music</a></p>
+                <p><a href="https://soundcloud.com/dustin-van-tate-testa/" target="_blank"><img src="https://soundcloud.com/favicon.ico" />Tate listens to unique music</a></p>
                 <p><a href="https://www.youtube.com/channel/UCH4Dm7H_eahTM4OEwuxTstQ" target="_blank"><img src="https://youtube.com/favicon.ico" />Tate makes low-quality videos</a></p>
                 <p><a href="https://github.com/robobibb/" target="_blank"><img src="https://avatars1.githubusercontent.com/u/17363207" />Tate programs robots</a></p>
                 <p><a href="http://na.op.gg/summoner/userName=ridderhoff" target="_blank"><img src="https://s.lolstatic.com/lolkit/1.1.6/resources/images/favicon.ico" />Tate plays LoL</a></p>
