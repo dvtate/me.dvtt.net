@@ -24,11 +24,9 @@
 
             h1, h2, h3, h4, h5, h6 {
                 font-family: 'Open Sans Light', 'Open Sans', sans-serif;
-            }
-            h1 {
-                font-size: 350%;
                 font-weight: 100;
             }
+            h1 { font-size: 350%; }
 
             /* links */
             p > a {
@@ -43,6 +41,7 @@
             ul > p > a > img {
                 width: 16px; height: 16px;
                 margin-right: 5px;
+                border-radius: 3px;
             }
 
             /* desktop support */
@@ -50,13 +49,11 @@
                 max-width: 650px;
                 margin: 0 auto;
                 position: relative;
-                padding: 0 20px;
+                padding: 0 10px;
             }
 
             /* bio */
-            div.main > table {
-                width: 100%;
-            }
+
             td#avatar img {
                 border-radius: 6px;
                 height: 200px;
@@ -74,31 +71,71 @@
                 bottom: 0;
                 right: 0;
             }
+
             div#title {
-                width: 100%;
+                border-bottom-right-radius: 10px;
                 border-bottom: 2px solid lightgrey;
             }
-            table {
+            div.main table {
                 border-bottom: 2px solid lightgrey;
-                border-radius: 10px;
+                border-radius: 15px;
             }
+
 
 
             /* mobile support */
             @media screen and (max-width:500px) {
+
                 /* make columns into rows */
-				table tr > * { display: block; }
+				table td { display: block; }
 				table tr { display: table-cell; }
+
                 table hr { padding: 0; }
                 table { border-radius: 0; }
+
                 /* remove img border */
                 div.border-right {
                     border: 0;
                     display: none;
                 }
-                div.main > hr { display: none; }
+
 			}
+
+
+
+            div.lobe {
+                border: 2px solid lightgrey;
+                border-radius: 20px;
+                border-bottom: 0;
+                padding: 5px;
+            }
+            div.lobe:hover {
+            }
+            .pad-left {
+                padding-left: 10px !important;
+            }
+
+            .hoverable-border {
+                transition: border-color 0.5s;
+            }
+            .hoverable-border:hover {
+                border-color: #1c4;
+            }
+
+            .hoverable-color {
+                transition: color 0.5s;
+            }
+            .hoverable-color:hover {
+                color: #1c4;
+            }
+
+
         </style>
+        <script>
+
+        </script>
+
+
     </head><body>
         <div class="main">
             <table>
@@ -114,11 +151,15 @@
                         <div id="title"><h1>Tate's Page</h1></div>
                         <p>Tate's full name is Dustin Van Tate Testa. Tate is programming
                             captain for <a href="https://robobibb.github.io" target="_blank">
-                            FRC team 4941 RoboBibb</a>.</p>
+                            FRC team 4941 RoboBibb</a>.
+                        </p>
                     </td>
                 </tr>
             </table>
+            <hr/>
 
+
+            <div class="lobe hoverable-border">
             <!-- outlinks -->
             <ul>
                 <p><a href="https://github.com/dvtate/" target="_blank"><img src="https://github.com/favicon.ico" />Tate writes Code</a></p>
@@ -133,7 +174,10 @@
                 <p><a href="https://na.op.gg/summoner/userName=ridderhoff" target="_blank"><img src="https://s.lolstatic.com/lolkit/1.1.6/resources/images/favicon.ico" />Tate plays LoL</a></p>
                 <p><a href="https://docs.google.com/document/d/11ZjnN3POHPSeKhXk4j5mXCPTD8g_gSQx5JTuok5li8Y/edit?usp=sharing" target="_blank"><img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon6.ico" />Tate also has a résumé</a></p>
             </ul>
-
+            </div>
+            <div class="lobe hoverable-border pad-left">More coming soon.</div>
+            <div class="lobe hoverable-border"></div><div class="lobe hoverable-border"></div>
+            <div class="lobe hoverable-border"></div><div class="lobe hoverable-border"></div>
 
         </div>
 
