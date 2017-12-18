@@ -82,27 +82,6 @@
             }
 
 
-
-            /* mobile support */
-            @media screen and (max-width:500px) {
-
-                /* make columns into rows */
-				table td { display: block; }
-				table tr { display: table-cell; }
-
-                table hr { padding: 0; }
-                table { border-radius: 0; }
-
-                /* remove img border */
-                div.border-right {
-                    border: 0;
-                    display: none;
-                }
-
-			}
-
-
-
             div.lobe {
                 border: 2px solid lightgrey;
                 border-radius: 20px;
@@ -113,6 +92,10 @@
             div.lobe:hover {
                 border-color: #1c4;
             }
+            div.lobe hr { transition: border-color 1s; }
+            div.lobe:hover hr { border-color: #1c4; }
+
+            
             .pad-left {
                 padding-left: 10px;
             }
@@ -132,6 +115,27 @@
                 padding-top: 0;
 
             }
+
+            
+                        /* mobile support */
+                        @media screen and (max-width:500px) {
+
+                            /* make columns into rows */
+            				table td { display: block; }
+            				table tr { display: table-cell; }
+
+                            table hr { padding: 0; }
+                            table { border-radius: 0; }
+
+                            /* remove img border */
+                            div.border-right {
+                                border: 0;
+                                display: none;
+                            }
+
+            			}
+
+
 
         </style>
         <script>
@@ -185,7 +189,7 @@
                     <p><a href="https://t.me/robobibb_bot/" target="_blank"><img src="https://telegram.org/favicon.ico" />Steve</a></p>
                     <p><a href="https://dvtate.com/" target="_blank"><img src="https://github.com/favicon.ico" />dvtate.com</a></p>
                     <p><a href="https://GitHub.com/dvtate/yoda/" target="_blank"><img src="https://github.com/favicon.ico" />YodaScript</a></p>
-                    <br/>
+                    <hr/>
                     <p><a href="https://docs.google.com/document/d/11ZjnN3POHPSeKhXk4j5mXCPTD8g_gSQx5JTuok5li8Y/edit?usp=sharing" target="_blank"><img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon6.ico" />résumé</a></p>
                 </ul>
             </div>
