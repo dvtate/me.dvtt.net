@@ -6,6 +6,7 @@
 		<title>Tate's Page</title>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <style>
             body {
                 color: lightgrey;
@@ -39,14 +40,14 @@
                 text-decoration: underline;
                 color: lightgrey;
             }
-            ul > p > a > img {
+            ul > p img {
                 width: 16px; height: 16px;
                 transition: padding 0.5s, border-radius 0.5s;
 
                 margin-right: 5px;
                 border-radius: 3px;
             }
-            ul > p:hover a > img {
+            ul > p:hover img {
                 padding-right: 5px;
                 border-radius: 5px;
             }
@@ -142,9 +143,37 @@
 			}
 
 
-        </style>
-        <script>
+            .btc-link {
+                display: inline;
+            }
+            input.cpy-box {
+                display: inline;
+            }
+            div.cpy-btn {
+                display: inline;
+            }
+            #btc-stuff  .btc-logo {
+                display: inline;
+                transition: margin-right 0.5s;
+            }
+            #btc-stuff:hover .btc-logo{
+                margin-right: 5px;
+            }
+            #copied-msg {
+                opacity: 0;
+                transition: opacity 2s;
+            }
 
+        </style>
+
+
+        <script>
+            function copyText(inpId) {
+                var copyText = document.getElementById(inpId);
+                copyText.select();
+                document.execCommand("Copy");
+                document.getElementById("copied-msg").style.opacity = "1";
+            }
         </script>
 
 
@@ -180,17 +209,28 @@
                     <p><a href="https://github.com/dvtate/" target="_blank"><img src="https://github.com/favicon.ico" />GitHub</a></p>
                     <p><a href="https://t.me/dvtate/" target="_blank"><img src="https://telegram.org/favicon.ico" />Telegram Channel</a></p>
                     <p><a href="https://t.me/ridderhoff/" target="_blank"><img src="https://telegram.org/favicon.ico" />Telegram Message</a></p>
-                    <p><a href="https://google.com/+tatetesta" target="_blank"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=plus.google.com&sz=256" />Google+</a></p>
+                    <p><a href="https://google.com/+tatetesta" target="_blank" title="strangers welcome here :)"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=plus.google.com&sz=256" />Google+</a></p>
                     <p><a href="https://fb.com/tate.testa" target="_blank" title="no strangers please"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=facebook.com&sz=256" />FaceBook</a></p>
                     <p><a href="https://www.snapchat.com/add/dvtate" target="_blank" title="no strangers please"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://www.snapchat.com/&sz=256" />Snapchat</a></p>
                     <p><a href="https://www.italki.com/user/2828739" target="_blank"><img src="https://italki.com/favicon.ico" />Italki</a></p>
                     <p><a href="https://soundcloud.com/dustin-van-tate-testa/" target="_blank"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=soundcloud.com&sz=256" />SoundCloud</a></p>
                     <p><a href="https://www.youtube.com/channel/UCH4Dm7H_eahTM4OEwuxTstQ" target="_blank"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=youtube.com&sz=256" />YouTube</a></p>
                     <p><a href="https://na.op.gg/summoner/userName=ridderhoff" target="_blank"><img src="https://s.lolstatic.com/lolkit/1.1.6/resources/images/favicon.ico" />League of Legends</a></p>
+                    <span id="btc-stuff"><i class="fa fa-btc btc-logo"></i>
+                        <div class="btc-link">
+                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)"
+                                value="1F4oNXVZhrYQDckKt3rXbdQtwN8hsAPGqz" class="cpy-box" id="btcaddrcpy" readOnly
+                            />
+                            <div class="cpy-btn" onclick="copyText('btcaddrcpy')">
+                                <i class="fa fa-clipboard"></i>
+                            </div>
+                            <span id="copied-msg">copied!</span>
+                        </div>
+                    </span>
                 </ul>
             </div>
 
-            <div class="lobe" name="projects">
+            <div class="lobe" >
                 <ul><h4 name="projects" id="projects">Projects</h4><hr/>
                     <p><a href="https://t.me/robobibb_bot/" target="_blank"><img src="https://telegram.org/favicon.ico" />Steve</a></p>
                     <p><a href="https://dvtate.com/" target="_blank"><img src="https://github.com/favicon.ico" />dvtate.com</a></p>
