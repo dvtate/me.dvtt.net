@@ -77,17 +77,31 @@
                 top: 13%;
                 bottom: 0;
                 right: 0;
+                transition: border-left-color 0.5s;
+            }
+
+            td#avatar:hover div.border-right {
+                border-left-color: #1c4;
             }
 
             div#title {
                 border-bottom-right-radius: 10px;
                 border-bottom: 2px solid lightgrey;
+                transition: border-bottom-color 0.5s;
+            }
+
+            div#title:hover {
+                border-bottom-color: #1c4;
             }
             div.main table {
                 border-bottom: 2px solid lightgrey;
                 border-radius: 20px;
+                transition: border-color 0.5s;
             }
 
+            div.main table:hover {
+                border-color: #1c4;
+            }
 
             div.lobe {
                 border: 2px solid lightgrey;
