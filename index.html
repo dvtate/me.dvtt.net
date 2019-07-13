@@ -57,6 +57,11 @@
                 color: #9cf;
                 transition: color 0.5s;
             }
+
+			a.jiggle {
+				font-family: 'Open Sans Light', 'Open Sans', sans-serif;
+                font-weight: 100;
+			}
             a:hover {
                 text-decoration: underline;
                 color: lightgrey;
@@ -120,6 +125,11 @@
             div#title:hover {
                 border-bottom-color: #1c4;
             }
+
+			td#about ul {
+				font-family: monospace;
+			}
+
             div.main table {
                 border-bottom: 2px solid lightgrey;
                 border-radius: 20px;
@@ -145,6 +155,14 @@
             }
             div.lobe hr { transition: border-color 1s; }
             div.lobe:hover hr { border-color: #1c4; }
+			div.lobe > ul > h4 { padding: 0; margin: 0;}
+			
+			p.subtitle {
+				padding: 0; margin-top: 0;                 
+				font-family: 'Open Sans Light', 'Open Sans', sans-serif;
+                font-weight: 100;
+				font-size: 80%;
+			}
 
 
             .pad-left {
@@ -233,12 +251,15 @@
 
                     <!-- quick bio -->
                     <td id="about">
-                        <div id="title"><h1>Tate's Page</h1></div>
-                        <p>Tate's full name is Dustin Van Tate Testa. 
-			Tate is a freshman at <a href="https://iit.edu" target="_blank">IIT</a>.
-			Tate was programming captain for <a href="https://robobibb.github.io" target="_blank">
-							FRC team 4941 RoboBibb</a>. 
-                        </p>
+                        <div id="title"><h1>Tate's Page</h1></div><br>
+						<p class="subtitle">This is my version of a business card. Feel free to store and use it to contact me.</p>
+						<ul>
+							<li><b>Full Name:</b> Dustin Van Tate Testa</li>
+							<li><b>Education:</b> Sophomore at <a href="https://iit.edu" target="_blank">IIT</a></li>
+							<li><b>Occupation:</b> Software Engineer at <a href="https://strattyx.com" target="_blank">StrattyX</a></li>
+							<li><b>Languages:</b> <span title="native">EN_US</span>, <span title="proficent w/ reading and speaking">DA_DK</span>,
+								<span title="intermediate mid">ES_US</span>, <br/> YodaScript, C/C++, JavaScript, Python, PHP, Java, etc.</li>
+						</ul>
                     </td>
                 </tr>
             </table>
@@ -252,17 +273,25 @@
             <!-- profiles & stuff -->
             <div class="lobe" >
                 <ul>
-                    <h4 name="profiles" id="profiles">Profiles</h4><hr/>
-                    <p><a href="https://github.com/dvtate/" target="_blank"><img src="https://github.com/favicon.ico" />GitHub</a></p>
+                    <h4 name="profiles" id="profiles">Find Me</h4>
+					<p class="subtitle">After the Google+ diaspora I've lost contact with about half of my friends. If anyone wants to get back in touch, or become a friend here are some options.</p>
+					<hr/>
+
+                    <p><a href="https://github.com/dvtate" target="_blank"><img src="https://github.com/favicon.ico" />GitHub</a></p>
+					<p><a href="https://gitlab.com/dvtate" target="_blank"><img src="https://gitlab.com/favicon.ico" />GitLab</a></p>
+                    <p><a href="https://t.me/dvtate/" target="_blank"><img src="https://telegram.org/favicon.ico" />Telegram</a></p>
                     <p><a href="https://soundcloud.com/dustin-van-tate-testa/" target="_blank"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=soundcloud.com&sz=256" />SoundCloud</a></p>
                     <p><a href="https://www.youtube.com/channel/UCH4Dm7H_eahTM4OEwuxTstQ" target="_blank"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=youtube.com&sz=256" />YouTube</a></p>
-                    <p><a href="https://t.me/dvtate/" target="_blank"><img src="https://telegram.org/favicon.ico" />Telegram Channel</a></p>
+					<p><a href="https://corki.js.org/support" target="_blank"><img src="https://discordapp.com/assets/07dca80a102d4149e9736d4b162cff6f.ico" /> Discord Server</a></p>
+					<p><a href="https://www.twitch.tv/ridderhoff" target="_blank"><img src="https://twitch.tv/favicon.ico" />Twitch.tv</a></p>
                     <p><a href="https://na.op.gg/summoner/userName=ridderhoff" target="_blank"><img src="https://s.lolstatic.com/lolkit/1.1.6/resources/images/favicon.ico" />League of Legends</a></p>
+					<p><a href="https://na.op.gg/summoner/userName=ggun" target="_blank"><img src="https://s.lolstatic.com/lolkit/1.1.6/resources/images/favicon.ico" />League of Legends (smurf)</a></p>
                     <hr/>
-                    <p><a href="https://www.linkedin.com/in/dustin-van-tate-testa-82a2a2b3/" target="_blank" title="linked in is actually a trash platform"><img src="https://www.linkedin.com/favicon.ico" />Linkedin</a></p>
-                    <p><a href="https://google.com/+tatetesta" target="_blank" title="strangers welcome here :)"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=plus.google.com&sz=256" />Google+</a></p>
-                    <p><a href="https://fb.com/tate.testa" target="_blank" title="I deleted my acct, fb cancer"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=facebook.com&sz=256" />FaceBook</a></p>
+
+					<p><a href="https://twitter.com/dvtate0" target="_blank"><img src="https://abs.twimg.com/favicons/favicon.ico" />Twitter</a></p>
+					<p><a href="https://www.linkedin.com/in/dustin-van-tate-testa-82a2a2b3/" target="_blank" title="linked in is actually a trash platform"><img src="https://www.linkedin.com/favicon.ico" />Linkedin</a></p>
                     <hr/>
+
                     <p><a href="https://www.italki.com/user/2828739" target="_blank"><img src="https://italki.com/favicon.ico" />Italki</a></p>
                     <p><a href="https://reddit.com/u/dvtate" target="_blank" title="i dont rly use reddit much"><img src="https://www.reddit.com/favicon.ico" />Reddit</a></p>
                     <p><a href="https://stackoverflow.com/users/4475863" target="_blank"><img src="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico" />StackOverflow</a></p>
@@ -273,7 +302,9 @@
 
             <!-- projects and stuff -->
             <div class="lobe" >
-                <ul><h4 name="projects" id="projects">Projects</h4><hr/>
+                <ul><h4 name="projects" id="projects">Personal Projects</h4>
+					<p class="subtitle">This list contains [likely outdated] descriptions of a few of my personal projects. </p>
+					<hr/>
                     <p><a href="https://GitHub.com/dvtate/yoda/" target="_blank"><img src="https://github.com/favicon.ico" />YodaScript</a></p>
                     <ul>
                         <p>A scripting language I created in 2016 and have continued development on since.
@@ -284,11 +315,12 @@
                         <p>[ <a href="https://github.com/dvtate/yoda" target="_blank" class="jiggle">View Code</a> ]</p>
                     </ul>
                     <p><a href="https://corki.js.org" target="_blank">
-                        <img src="https://corki.js.org/Corkiporo.png" />Corki Bot</a></p>
+                        <img src="https://corki.js.org/corgi.gif" />Corki Bot</a></p>
                     <ul>
-                        <p>A chat bot I initially made for <a href="https://discord.gg/q7CK7Ty" target="_blank">the Corki Mains Discord
-                            server</a>, but is now used for a number of others. Corki provides lots of features for general server management,
-                            user interaction, etc. In addition, the bot has League of Legends related features, and does a variety of things
+                        <p>A chat bot I initially made for <a href="https://discord.gg/8ASxJG2" target="_blank">the Corki Mains Discord
+                            server</a>, but is now used by about 100000 users. The bot provides a diverse set of features, ranging from League
+							of Legends specific commands and interactions to expression-based user management. Corki provides lots of features
+							for general server management, user interaction, etc. In addition, the bot has League of Legends related features, and does a variety of things
                             in the server to keep the community active. I made the bot using node.js and BASH using a variety of libraries and API's,
                             and run it on my home server. In addition, I made <a href="https://corki.js.org">a responsive website for the bot</a>
                         </p>
@@ -309,6 +341,7 @@
                     </ul>
                     <p><a href="https://dvtate.com/" target="_blank"><img src="https://github.com/favicon.ico" />dvtate.com</a></p>
                     <ul>
+						<h5>Note: I am no longer running this site as PHP5 is dead.</h5>
                         <p>I made almost all of this website in my freshman and sophomore years in high school.
                             the site is actually quite large and is far more than just an all about me page. The
                             site has <a href="https://dvtate.com/healthit/" target="_blank">an account system</a>,
@@ -317,7 +350,6 @@
                             my home server.</p>
                         <p>[ <a href="https://dvtate.com" target="_blank" class="jiggle">See Site</a> | <a href="https://github.com/dvtate/dvtate.com/" target="_blank" class="jiggle">View Code</a>]
                     </ul>
-
                     <hr/>
                     <p><a href="https://docs.google.com/document/d/11ZjnN3POHPSeKhXk4j5mXCPTD8g_gSQx5JTuok5li8Y/edit?usp=sharing" target="_blank"><img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon6.ico" />résumé</a></p>
                 </ul>
