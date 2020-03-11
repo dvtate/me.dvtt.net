@@ -22,8 +22,8 @@
                 padding: 0;
             }
             div#head > img {
-                height: 20vh;
-		max-width: 100vw;
+                max-height: 16vh;
+                max-width: 100vw;
             }
 
             div.row {
@@ -75,8 +75,7 @@
         <div class="row" id="app-body">
             <noscript>Please enable JavaScript for this Widget to work</noscript> 
         </div>
-        <script>
- const survey=[{question:"Do you live alone?",radio:["Yes","No"],title:"Living Situation",detail:`Investment fraud victims typically have a different demographic
+        <script>const survey=[{question:"Do you live alone?",radio:["Yes","No"],title:"Living Situation",detail:`Investment fraud victims typically have a different demographic
                     profile than the general population. Contrary to what many people think, nearly
                     two-thirds of investment fraud victims are married males who live with their wives.
                     They also tend to be college educated, optimistic and self-reliant, have above average
@@ -176,8 +175,8 @@
                     <p>Use our Risk Meter to see whether you share characteristics and behavior traits that have been shown to make some investors vulnerable to investment fraud.</p>
                     <button type="button" onclick="showQ(0)">Start</button>
                     
-                `}function showS(){let a=[],b=0;if(1==survey[0].value&&(b+=5,a.push(survey[0])),1==survey[1].value&&(b+=5,a.push(survey[1])),1==survey[2].value&&(b+=5,a.push(survey[2])),0==survey[3].value&&(b+=10,a.push(survey[3])),survey[4].value){const c={0:5,1:0,2:5,3:5},d=b;for(const a in survey[4].value)survey[4].value[a]&&(b+=c[a]);d!=b&&a.push(survey[4])}if(0==survey[5].value&&(b+=1==survey[2].value?10:5,a.push(survey[5])),0==survey[6].value&&(b+=1==survey[3].value?10:5,a.push(survey[6])),1==survey[7].value&&(b+=10,a.push(survey[7])),0==survey[8].value&&(b+=10,a.push(survey[8])),0==survey[9].value&&(b+=5,a.push(survey[9])),1==survey[10].value&&(b+=10,a.push(survey[10])),0==survey[11].value&&(b+=5,a.push(survey[11])),survey[12].value)for(cb in survey[12].value)survey[12].value[cb]&&(b+=5,a.push(survey[12].risks[cb]));b=100*b/125;const c=66<b?"#f00":33>b?"#0f0":"#ff0";document.getElementById("app-body").innerHTML=`<h1>Your risk level: 
-                    <span style="color:${c}">${b}<span style="font-size:20%">/${125}</span></h1>
+                `}function showS(){let a=[],b=0;if(1==survey[0].value&&(b+=5,a.push(survey[0])),1==survey[1].value&&(b+=5,a.push(survey[1])),1==survey[2].value&&(b+=5,a.push(survey[2])),0==survey[3].value&&(b+=10,a.push(survey[3])),survey[4].value){const c={0:5,1:0,2:5,3:5},d=b;for(const a in survey[4].value)survey[4].value[a]&&(b+=c[a]);d!=b&&a.push(survey[4])}if(0==survey[5].value&&(b+=1==survey[2].value?10:5,a.push(survey[5])),0==survey[6].value&&(b+=1==survey[3].value?10:5,a.push(survey[6])),1==survey[7].value&&(b+=10,a.push(survey[7])),0==survey[8].value&&(b+=10,a.push(survey[8])),0==survey[9].value&&(b+=5,a.push(survey[9])),1==survey[10].value&&(b+=10,a.push(survey[10])),0==survey[11].value&&(b+=5,a.push(survey[11])),survey[12].value)for(cb in survey[12].value)survey[12].value[cb]&&(b+=5,a.push(survey[12].risks[cb]));b=100*b/125;const c=66<b?"#f00":33>b?"#0f0":"#990";document.getElementById("app-body").innerHTML=`<h1>Your risk level: 
+                    <span style="color:${c}">${b}%</span></h1>
                     <ul>${a.map(a=>`<li><b>${a.title}:</b><p>${a.detail}</p></li>`).join("")}</ul>
                 `}showI();
         </script>
