@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Tate's Page</title>
+
+        <link rel="icon" href="https://avatars3.githubusercontent.com/u/15305612" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+        <style>
+            html {
+                color: lightgrey;
+                font-family: 'Open Sans', Helvetica, sans-serif;
+                padding: 0; margin: 0;
+                background-image: linear-gradient(to bottom right,#002f4b,#602235);
+
+
+                /*
+                background-color: #20262c;
+                background-repeat: no-repeat;
+                background-attachment: fixed !important;
+                background: linear-gradient(#20262c, #435);
+                background: -webkit-linear-gradient(#20262c, #435);
+                background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #20262c), color-stop(100%, #435));
+                background: -moz-linear-gradient(#20262c, #435);
+                background: -o-linear-gradient(#20262c, #435);
+                background: -ms-linear-gradient(#20262c, #435);
+                */
+            }
+
+            body {
+                background-image: url("bg.png");
+                background-attachment: fixed;
+                padding: 0; margin: 0;
+            }
+
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Open Sans Light', 'Open Sans', sans-serif;
+                font-weight: 100;
+            }
+            h1 { font-size: 350%; }
+            h4 { font-size: 150%; }
+
+            /*
+            * I stole this code from: https://github.com/xb2016/Kratos/blob/master/css/kratos.min.css
+            */
+            @keyframes a{2%{-webkit-transform:translateY(1.5px) rotate(1.5deg);transform:translateY(1.5px) rotate(1.5deg)}4%{-webkit-transform:translateY(-1.5px) rotate(-.5deg);transform:translateY(-1.5px) rotate(-.5deg)}6%{-webkit-transform:translateY(1.5px) rotate(-1.5deg);transform:translateY(1.5px) rotate(-1.5deg)}8%{-webkit-transform:translateY(-1.5px) rotate(-1.5deg);transform:translateY(-1.5px) rotate(-1.5deg)}10%{-webkit-transform:translateY(2.5px) rotate(1.5deg);transform:translateY(2.5px) rotate(1.5deg)}12%{-webkit-transform:translateY(-.5px) rotate(1.5deg);transform:translateY(-.5px) rotate(1.5deg)}14%{-webkit-transform:translateY(-1.5px) rotate(1.5deg);transform:translateY(-1.5px) rotate(1.5deg)}16%{-webkit-transform:translateY(-.5px) rotate(-1.5deg);transform:translateY(-.5px) rotate(-1.5deg)}18%{-webkit-transform:translateY(.5px) rotate(-1.5deg);transform:translateY(.5px) rotate(-1.5deg)}20%{-webkit-transform:translateY(-1.5px) rotate(2.5deg);transform:translateY(-1.5px) rotate(2.5deg)}22%{-webkit-transform:translateY(.5px) rotate(-1.5deg);transform:translateY(.5px) rotate(-1.5deg)}24%{-webkit-transform:translateY(1.5px) rotate(1.5deg);transform:translateY(1.5px) rotate(1.5deg)}26%{-webkit-transform:translateY(.5px) rotate(.5deg);transform:translateY(.5px) rotate(.5deg)}28%{-webkit-transform:translateY(.5px) rotate(1.5deg);transform:translateY(.5px) rotate(1.5deg)}30%{-webkit-transform:translateY(-.5px) rotate(2.5deg);transform:translateY(-.5px) rotate(2.5deg)}32%,34%{-webkit-transform:translateY(1.5px) rotate(-.5deg);transform:translateY(1.5px) rotate(-.5deg)}36%{-webkit-transform:translateY(-1.5px) rotate(2.5deg);transform:translateY(-1.5px) rotate(2.5deg)}38%{-webkit-transform:translateY(1.5px) rotate(-1.5deg);transform:translateY(1.5px) rotate(-1.5deg)}40%{-webkit-transform:translateY(-.5px) rotate(2.5deg);transform:translateY(-.5px) rotate(2.5deg)}42%{-webkit-transform:translateY(2.5px) rotate(-1.5deg);transform:translateY(2.5px) rotate(-1.5deg)}44%{-webkit-transform:translateY(1.5px) rotate(.5deg);transform:translateY(1.5px) rotate(.5deg)}46%{-webkit-transform:translateY(-1.5px) rotate(2.5deg);transform:translateY(-1.5px) rotate(2.5deg)}48%{-webkit-transform:translateY(-.5px) rotate(.5deg);transform:translateY(-.5px) rotate(.5deg)}50%{-webkit-transform:translateY(.5px) rotate(.5deg);transform:translateY(.5px) rotate(.5deg)}52%{-webkit-transform:translateY(2.5px) rotate(2.5deg);transform:translateY(2.5px) rotate(2.5deg)}54%{-webkit-transform:translateY(-1.5px) rotate(1.5deg);transform:translateY(-1.5px) rotate(1.5deg)}56%{-webkit-transform:translateY(2.5px) rotate(2.5deg);transform:translateY(2.5px) rotate(2.5deg)}58%{-webkit-transform:translateY(.5px) rotate(2.5deg);transform:translateY(.5px) rotate(2.5deg)}60%{-webkit-transform:translateY(2.5px) rotate(2.5deg);transform:translateY(2.5px) rotate(2.5deg)}62%{-webkit-transform:translateY(-.5px) rotate(2.5deg);transform:translateY(-.5px) rotate(2.5deg)}64%{-webkit-transform:translateY(-.5px) rotate(1.5deg);transform:translateY(-.5px) rotate(1.5deg)}66%{-webkit-transform:translateY(1.5px) rotate(-.5deg);transform:translateY(1.5px) rotate(-.5deg)}68%{-webkit-transform:translateY(-1.5px) rotate(-.5deg);transform:translateY(-1.5px) rotate(-.5deg)}70%{-webkit-transform:translateY(1.5px) rotate(.5deg);transform:translateY(1.5px) rotate(.5deg)}72%{-webkit-transform:translateY(2.5px) rotate(1.5deg);transform:translateY(2.5px) rotate(1.5deg)}74%{-webkit-transform:translateY(-.5px) rotate(.5deg);transform:translateY(-.5px) rotate(.5deg)}76%{-webkit-transform:translateY(-.5px) rotate(2.5deg);transform:translateY(-.5px) rotate(2.5deg)}78%{-webkit-transform:translateY(-.5px) rotate(1.5deg);transform:translateY(-.5px) rotate(1.5deg)}80%{-webkit-transform:translateY(1.5px) rotate(1.5deg);transform:translateY(1.5px) rotate(1.5deg)}82%{-webkit-transform:translateY(-.5px) rotate(.5deg);transform:translateY(-.5px) rotate(.5deg)}84%{-webkit-transform:translateY(1.5px) rotate(2.5deg);transform:translateY(1.5px) rotate(2.5deg)}86%{-webkit-transform:translateY(-1.5px) rotate(-1.5deg);transform:translateY(-1.5px) rotate(-1.5deg)}88%{-webkit-transform:translateY(-.5px) rotate(2.5deg);transform:translateY(-.5px) rotate(2.5deg)}90%{-webkit-transform:translateY(2.5px) rotate(-.5deg);transform:translateY(2.5px) rotate(-.5deg)}92%{-webkit-transform:translateY(.5px) rotate(-.5deg);transform:translateY(.5px) rotate(-.5deg)}94%{-webkit-transform:translateY(2.5px) rotate(.5deg);transform:translateY(2.5px) rotate(.5deg)}96%{-webkit-transform:translateY(-.5px) rotate(1.5deg);transform:translateY(-.5px) rotate(1.5deg)}98%{-webkit-transform:translateY(-1.5px) rotate(-.5deg);transform:translateY(-1.5px) rotate(-.5deg)}0%,to{-webkit-transform:translate(0) rotate(0);transform:translate(0) rotate(0)}}
+
+
+
+            /* links */
+            a {
+                text-decoration: none;
+                color: #9cf;
+                transition: color 0.5s;
+            }
+
+			a.jiggle {
+				font-family: 'Open Sans Light', 'Open Sans', sans-serif;
+                font-weight: 100;
+			}
+            a:hover {
+                text-decoration: underline;
+                color: lightgrey;
+            }
+            .jiggle:hover {
+                display:inline-block;
+                -webkit-animation:a 5s infinite ease-in-out;
+                animation: a 5s infinite ease-in-out;
+            }
+
+            ul > p img {
+                width: 16px; height: 16px;
+                transition: padding 0.5s, border-radius 0.5s;
+
+                margin-right: 5px;
+                border-radius: 3px;
+            }
+            ul > p:hover img {
+                padding-right: 5px;
+                border-radius: 5px;
+            }
+
+            /* desktop support */
+            div.main {
+                max-width: 650px;
+                margin: 0 auto;
+                position: relative;
+                padding: 0 10px;
+            }
+
+            /* bio */
+            td#avatar img {
+                border-radius: 6px;
+                height: 200px;
+            }
+            tr, td { padding: 20px; }
+            td#avatar {
+                position: relative;
+                padding-bottom: 0;
+                vertical-align: center;
+            }
+            td#avatar div.border-right {
+                border-left: 2px solid lightgrey;
+                position: absolute;
+                top: 13%;
+                bottom: 0;
+                right: 0;
+                transition: border-left-color 0.5s;
+            }
+
+            td#avatar:hover div.border-right {
+                border-left-color: #1c4;
+            }
+
+            div#title {
+                border-bottom-right-radius: 10px;
+                border-bottom: 2px solid lightgrey;
+                transition: border-bottom-color 0.5s;
+            }
+
+            div#title:hover {
+                border-bottom-color: #1c4;
+            }
+
+			td#about ul {
+				font-family: monospace;
+			}
+
+            div.main table {
+                border-bottom: 2px solid lightgrey;
+                border-radius: 20px;
+                transition: border-color 0.5s;
+            }
+
+            div.main table:hover {
+                border-color: #1c4;
+            }
+
+            div.lobe {
+                border: 2px solid lightgrey;
+                border-radius: 20px;
+                border-bottom: 0;
+                padding: 5px 0;
+                transition: border-color 0.5s, color 1s, background-color 0.5s;
+                background-color: rgba(20, 20, 20, 0.1);
+            }
+            div.lobe:hover {
+                border-color: #1c4;
+                background-color: rgba(20, 20, 20, 0.4);
+                color: white;
+            }
+            div.lobe hr { transition: border-color 1s; }
+            div.lobe:hover hr { border-color: #1c4; }
+			div.lobe > ul > h4 { padding: 0; margin: 0;}
+			
+			p.subtitle {
+				padding: 0; margin-top: 0;                 
+				font-family: 'Open Sans Light', 'Open Sans', sans-serif;
+                font-weight: 100;
+				font-size: 80%;
+			}
+
+
+            .pad-left {
+                padding-left: 10px;
+            }
+
+
+            div.string {
+                padding: 10px;
+                border-bottom: 1px solid lightgrey;
+                transition: color 0.5s, border-color 0.5s;
+            }
+            div.string:hover {
+                color: #1c4;
+                border-color: #1c4;
+            }
+            div.string-box {
+                padding: 20px;
+                padding-top: 0;
+
+            }
+
+
+            /* mobile support */
+            @media screen and (max-width:500px) {
+
+                /* make columns into rows */
+				table td { display: block; }
+				table tr { display: table-cell; }
+
+                table hr { padding: 0; }
+                table { border-radius: 0; }
+
+                /* remove img border */
+                div.border-right {
+                    border: 0;
+                    display: none;
+                }
+
+			}
+
+            /* bitcoin donation box */
+            .btc-link {
+                display: inline;
+            }
+            input.cpy-box {
+                display: inline;
+            }
+            div.cpy-btn {
+                display: inline;
+            }
+            #btc-stuff  .btc-logo {
+                display: inline;
+                transition: margin-right 0.5s;
+            }
+            #btc-stuff:hover .btc-logo{
+                margin-right: 5px;
+            }
+            #copied-msg {
+                opacity: 0;
+                transition: opacity 2s;
+            }
+
+        </style>
+
+
+        <script>
+//             function copyText(inpId) {
+//                 var copyText = document.getElementById(inpId);
+//                 copyText.select();
+//                 document.execCommand("Copy");
+//                 document.getElementById("copied-msg").style.opacity = "1";
+//             }
+        </script>
+
+
+    </head><body>
+        <div class="main">
+            <table>
+                <tr>
+                    <!-- gh profile pic -->
+                    <td id="avatar">
+                        <img src="https://avatars3.githubusercontent.com/u/15305612" />
+                        <div class="border-right"></div>
+                    </td>
+
+                    <!-- quick bio -->
+                    <td id="about">
+                        <div id="title"><h1>Tate's Page</h1></div><br>
+				<p class="subtitle">This page is just a list of places to find me. For more on me visit <a href="http://dvtate.com">my other website</a></p>
+						<ul>
+							<li><b>Full Name:</b> Dustin Van Tate Testa</li>
+							<li><b>Education:</b> Student at <a href="https://iit.edu" target="_blank">IIT</a></li>
+							<li><b>Languages:</b> <span title="native">EN_US</span>, <span title="proficent w/ reading and speaking">DA_DK</span>,
+								<span title="intermediate mid">ES_ES</span>, <br/> YodaScript, C/C++, JavaScript, Python, PHP, etc.</li>
+						</ul>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- shortcut links -->
+            <div class="string-box">
+                <div class="string"></div>
+                <div class="string"><a href="#profiles" class="jiggle">Profiles</a> | <a href="#contact" class="jiggle">Contact</a></div>
+            </div>
+
+            <!-- profiles & stuff 
+            TODO should prob sort these better -->
+            <div class="lobe" >
+                <ul>
+                    <h4 name="profiles" id="profiles">Find Me</h4>
+					<p class="subtitle">After the Google+ diaspora I've lost contact with about half of my friends. If anyone wants to get back in touch, or become a friend here are some options.</p>
+					<hr/>
+                    <p><a href="https://github.com/dvtate" target="_blank"><img src="https://github.com/favicon.ico" />GitHub</a></p>
+					<p><a href="https://gitlab.com/dvtate" target="_blank"><img src="https://gitlab.com/favicon.ico" />GitLab</a></p>
+                    <p><a href="https://soundcloud.com/hoffridder" target="_blank"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=soundcloud.com&sz=256" />SoundCloud</a></p>
+                    <p><a href="https://open.spotify.com/user/3xs52ie969gcsi7yq9tv3p0wt" target="_blank"><img src="https://open.spotify.com/favicon.ico" />Spotify</a></p>
+                    <p><a href="https://www.youtube.com/channel/UCH4Dm7H_eahTM4OEwuxTstQ" target="_blank"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=youtube.com&sz=256" />YouTube</a></p>
+					<p><a href="https://www.twitch.tv/ridderhoff" target="_blank"><img src="https://twitch.tv/favicon.ico" />Twitch.tv</a></p>
+                    <p><a href="https://aur.archlinux.org/account/dvtate" target="_blank"><img src="https://www.archlinux.org/favicon.ico"/>Arch Linux AUR</a></p>
+                    <hr/>
+					<p><a href="https://t.me/ridderhoff/" target="_blank"><img src="https://telegram.org/favicon.ico" />Telegram</a></p>
+					<p><a href="https://t.me/dvtate/" target="_blank"><img src="https://telegram.org/favicon.ico" />Telegram Channel</a></p>
+					<p><a href="https://twitter.com/hoffridder" target="_blank"><img src="https://abs.twimg.com/favicons/favicon.ico" />Twitter</a></p>
+					<p><a href="https://mstdn.social/@ridder" target="_blank"><img src="https://mstdn.social/favicon.ico" />Mastodon</a></p>
+					<p><a href="https://www.linkedin.com/in/dustin-van-tate-testa-82a2a2b3/" target="_blank" title="linked in is actually a trash platform"><img src="https://www.linkedin.com/favicon.ico" />Linkedin</a></p>
+					<p><a href="https://corki.js.org/support" target="_blank"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=discord.com&sz=256" /> Discord Server</a></p>
+					<p><a href="https://www.snapchat.com/add/dvtate" target="_blank" title="no strangers please"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://www.snapchat.com/&sz=256" />Snapchat</a></p>
+                    <hr/>
+                    <p><a href="https://reddit.com/u/dvtate" target="_blank" title="i dont rly use reddit much"><img src="https://s2.googleusercontent.com/s2/favicons?domain_url=reddit.com&sz=256" />Reddit</a></p>
+                    <p><a href="https://stackoverflow.com/users/4475863" target="_blank"><img src="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico" />StackOverflow</a></p>
+                    <p><a href="https://askubuntu.com/users/484258" target="_blank"><img src="https://cdn.sstatic.net/Sites/askubuntu/img/favicon.ico" />AskUbuntu</a></p>
+					<p><a href="https://www.duolingo.com/profile/ridderhoff" target="_blank"><img src="https://d35aaqx5ub95lt.cloudfront.net/favicon.ico" />Duolingo</a></p>
+                    <p><a href="https://www.italki.com/user/2828739" target="_blank"><img src="https://italki.com/favicon.ico" />Italki</a></p>
+                    <p><a href="https://na.op.gg/multi/query=ridderhoff%2Cggun" target="_blank"><img src="https://s.lolstatic.com/lolkit/1.1.6/resources/images/favicon.ico" />League of Legends</a></p>
+					<p><a href="https://steamcommunity.com/id/ridderhoff/" target="_blank"><img src="https://store.steampowered.com/favicon.ico" />Steam</a></p>
+                </ul>
+            </div>
+
+            <!-- projects and stuff -->
+		<!--
+            <div class="lobe" >
+                <ul><h4 name="projects" id="projects">Personal Projects</h4>
+					<p class="subtitle">This list contains [likely outdated] descriptions of a few of my personal projects. </p>
+					<hr/>
+                    <p><a href="https://GitHub.com/dvtate/yoda/" target="_blank"><img src="https://github.com/favicon.ico" />YodaScript</a></p>
+                    <ul>
+                        <p>A scripting language I created in 2016 and have continued development on since.
+                        The language is turing-complete and supports OOP, lambdas, structured programming, variables,
+                        lists, etc. The language is essentially an overgrown <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation" target="_blank">RPN</a>
+                        parser.  I use C++ to write the interpreter for the language and the project
+                        now has over 10000 lines of code.</p>
+                        <p>[ <a href="https://github.com/dvtate/yoda" target="_blank" class="jiggle">View Code</a> ]</p>
+                    </ul>
+                    <p><a href="https://corki.js.org" target="_blank">
+                        <img src="https://corki.js.org/corgi.gif" />Corki Bot</a></p>
+                    <ul>
+                        <p>A chat bot I initially made for <a href="https://discord.gg/8ASxJG2" target="_blank">the Corki Mains Discord
+                            server</a>, but is now used by about 100000 users. The bot provides a diverse set of features, ranging from League
+							of Legends specific commands and interactions to expression-based user management. Corki provides lots of features
+							for general server management, user interaction, etc. In addition, the bot has League of Legends related features, and does a variety of things
+                            in the server to keep the community active. I made the bot using node.js and BASH using a variety of libraries and API's,
+                            and run it on my home server. In addition, I made <a href="https://corki.js.org">a responsive website for the bot</a>
+                        </p>
+
+                        <p>[ <a href="https://corki.js.org" target="_blank" class="jiggle">Visit Website</a> |
+                             <a href="https://discordapp.com/oauth2/authorize?client_id=332958493722017792&permissions=66186303&scope=bot" target="_blank" class="jiggle">Add to your server</a> |
+                             <a href="https://github.com/dvtate/corki-bot" target="_blank" class="jiggle">View Code</a> ]</p>
+                    </ul>
+                    <p><a href="https://t.me/robobibb_bot/" target="_blank"><img src="https://robobibb.github.io/imgs/roboman.jpg" />Steve</a></p>
+                    <ul>
+                        <p>A chat bot I made for <a href="https://robobibb.github.com">my robotics team</a>
+                            to provide a variety to quickly integrate new members and provide a variety of useful
+                            funcitons for veterans and chats outside of our team.
+                            In addition, the bot can edit itself and the team website. I made
+                            the bot using the Telegram API and Node.js, and run it on my home server.</p>
+                        <p>[ <a href="https://t.me/robobibb_bot" target="_blank" class="jiggle">Try it out</a> |
+                            <a href="https://github.com/dvtate/steve" target="_blank" class="jiggle">View Code</a> ]</p>
+                    </ul>
+                    <p><a href="http://old.dvtate.com/" target="_blank"><img src="https://github.com/favicon.ico" />old.dvtate.com</a></p>
+			<h5>Note: this website has been moved to unpaid hosting after 2 years off the internet without fixing a number of problems or making any changes (ie - Google+ integrations).</h5>
+                    <ul>
+		    	<p>I made almost all of this website in my freshman and sophomore years in high school.
+                            the site is actually quite large and is far more than just an all about me page. The
+                            site has <a href="https://old.dvtate.com/healthit/" target="_blank">an account system</a>,
+                            <a href="https://old.dvtate.com/chat/" target="_blank">a chatroom</a>, and a variety of
+                            other pages you aren't likely to find anywhere else. The site uses php and runs on
+                            my home server.</p>
+                        <p>[ <a href="https://old.dvtate.com" target="_blank" class="jiggle">See Site</a> | <a href="https://github.com/dvtate/dvtate.com/" target="_blank" class="jiggle">View Code</a> ]
+                    </ul>
+                    <hr/>
+                    <p><a href="https://docs.google.com/document/d/11ZjnN3POHPSeKhXk4j5mXCPTD8g_gSQx5JTuok5li8Y/edit?usp=sharing" target="_blank"><img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon6.ico" />résumé</a></p>
+                </ul>
+            </div>
+		-->
+
+            <!-- Contact info -->
+            <div class="lobe" >
+                <ul><h4 name="contact" id="contact">Contact Me</h4><hr/>
+                    <p><a href="https://t.me/ridderhoff/" target="_blank"><img src="https://telegram.org/favicon.ico" />Telegram</a></p>
+                    <p><a href="mailto:toast27@gmail.com" target="_blank"><img src="https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico">Email</a></p>
+                </ul>
+            </div>
+
+            <!-- nothing here (yet) -->
+            <div class="lobe pad-left"><div class="pad-left" id="morecoming"><span class="jiggle">For more, please visit <a href="http://dvtate.com">my other webiste</a></span></div></div>
+            <div class="lobe"></div><div class="lobe"></div><div class="lobe"></div>
+
+            <!--
+                </div>
+                <div class="lobe hoverable-border pad-left">More coming soon.</div>
+                <div class="lobe hoverable-border"></div><div class="lobe hoverable-border"></div>
+                <div class="lobe hoverable-border"></div><div class="lobe hoverable-border"></div>
+            -->
+        </div>
+    </body>
+</html>
