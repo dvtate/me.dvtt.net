@@ -1,0 +1,279 @@
+"../postfix-haskell/planning/stdlib/prelude.phs" include use
+"../postfix-haskell/planning/stdlib/str.phs" include use
+"../postfix-haskell/planning/stdlib/math.phs" include use
+"../postfix-haskell/planning/stdlib/bits.phs" include use
+
+
+{
+    "(() => {
+        let v = ctx.pop();
+        let ret = [];
+        while (v) {
+            const n = v.instr || v.name;
+            ret.push(`${v.constructor.name}${n ? ': ' + n : ''}`);
+            if (v.value)
+                v = v.value;
+            else if (v.args && v.args[0])
+                v = v.args[0];
+            else if (v.source)
+                v = v.source;
+            else {
+                ret.push(v);
+                v = null;
+            }
+        }
+        return ret.reverse();
+    })()" :eval
+} $:semi_build =
+
+
+
+# Cucked game monad
+Void class $Game =
+
+# Game dimensions
+400 $width =
+500 $height =
+
+# the wall width takes up the remaining space of the canvas width. with 14 bricks
+# and 13 2px gaps between them, thats: 400 - (14 * 25 + 2 * 13) = 24px. so each
+# wall will be 12px
+#12 $wallSize =
+
+{ # Detect collision between 2 rectangles
+    {   $x1 $y1 $w1 $h1
+        $x2 $y2 $w2 $h2 } =
+    x1 x2 w2 + <
+    x1 w1 + x2 > &&
+    y1 y2 h2 + < &&
+    y1 h1 + y2 > &&
+} $rect_collide =
+
+##
+# Paddle: position, speed
+##
+
+{ I32 I32 } pack class $Paddle =
+
+3 $Paddle.Speed =
+440 $Paddle.Y =
+
+{ type Paddle == } { unpack pop } $Paddle.position fun
+{ type Paddle == } { unpack swap pop } $Paddle.speed fun
+{ type Paddle == } {
+    unpack { $p $s } =
+    p s + $moved =
+    { true } { p } $pos fun
+    { moved 0 >  moved width Brick.Width - < && } { moved } $pos fun
+    { pos s } pack Paddle make
+} $Paddle.update fun
+
+##
+# Ball
+##
+{ I32 I32 I32 I32 } pack class $Ball =
+10 $Ball.Width =
+10 $Ball.Height =
+{ type Ball == } { unpack { $x $y $dx $dy } = x  } $Ball.x fun
+{ type Ball == } { unpack { $x $y $dx $dy } = y  } $Ball.y fun
+{ type Ball == } { unpack { $x $y $dx $dy } = dx } $Ball.dx fun
+{ type Ball == } { unpack { $x $y $dx $dy } = dy } $Ball.dy fun
+{ { $paddle $ball } =
+    paddle type Paddle == ball type Ball == &&
+} {
+    # Aliasing
+    { $paddle $ball } =
+    ball unpack { $x $y $dx $dy } =
+    paddle unpack { $p $_ } =
+
+    # No collisions
+    { true } {
+        #555003 log
+        x dx +
+        y dy +
+        dx
+        dy
+    } $branch fun
+
+    # Detect collision with paddle
+    {   p Paddle.Y Brick.Width Brick.Height
+        x dx + y dy + Ball.Width Ball.Height
+        rect_collide
+    } {
+        #555002 log
+        # Note ball placed above paddle
+        x dx +
+        Paddle.Y Ball.Height -
+        dx
+        0 dy -
+    } $branch fun
+
+    # Detect collision with walls
+    { x dx + 0 <= x dx + width Ball.Width - >= || } {
+        #555001 log
+        x dx -
+        y dy +
+        0 dx -
+        dy
+    } $branch fun
+    { y dy + 0 <= } {
+        #555000 log
+        x dx +
+        y dy -
+        dx
+        0 dy -
+    } $branch fun
+
+    # Doesn't like runtime tuples - work around:
+    branch { $x2 $y2 $dx2 $dy2 } =
+    { x2 y2 dx2 dy2 } pack Ball make $ret =
+
+    #ret unpack log_4_i32
+    ret
+} $Ball.update fun
+
+# Brick constants
+2 $Brick.Gap =
+25 $Brick.Width =
+12 $Brick.Height =
+
+# 24 bit colors
+0x0 $Colors.Gone =
+0xff0000 $Colors.Red =
+0x00ff00 $Colors.Green =
+0x0000ff $Colors.Blue =
+0x00ffff $Colors.Cyan =
+0xffffff $Colors.White =
+
+{ # Draw Scene
+    { $ball $paddle } =
+
+    # Clear scene
+    0 0 width height
+    { Game I32 I32 I32 I32 } { Game } Arrow
+    { "js" "contextClearRect" } import @
+
+    { { $x $y $h $w $color } =
+        # Set fill
+        color 0xff0000 and 16 >> $r =
+        color 0xff00 and 8 >> $g =
+        color 0xff and $b =
+        r g b { Game I32 I32 I32 } { Game } Arrow { "js" "setFill" } import @
+
+        # Draw rectangle
+        x y w h { Game I32 I32 I32 I32 } { Game } Arrow { "js" "contextFillRect" } import @
+    } $draw_rect =
+
+    # Draw paddle
+    paddle Paddle.position
+    Paddle.Y
+    Brick.Height
+    Brick.Width
+    Colors.Cyan
+    draw_rect
+
+    # Draw ball
+    ball Ball.x
+    ball Ball.y
+    Ball.Width
+    Ball.Height
+    Colors.White
+    draw_rect
+
+    # Forward state
+    ball paddle
+} $Game.draw =
+
+{ Game I32 } { Game } Arrow { "js" "console.log" } import $log =
+{ Game I32 I32 I32 I32 } { Game } Arrow { "js" "console.log" } import $log_4_i32 =
+{ Game I32 I32 } { Game } Arrow { "js" "console.log" } import $log_2_i32 =
+
+{
+    # Capture state
+    { $ball $paddle } =
+
+    # Update paddle
+    paddle Paddle.update $paddle2 =
+    paddle2 ball Ball.update $ball2 =
+
+    # Forward state
+    ball2 paddle2
+} $Game.update =
+
+# So sketchy lol
+{ # Load state from memory
+    { 4 * { I32 } { I32 } Arrow "i32.load" _asm } $load_i32 =
+    { 0 load_i32 1 load_i32 2 load_i32 3 load_i32 } pack Ball make
+    { 4 load_i32 5 load_i32 } pack Paddle make
+} $Game.get_state =
+
+{ # Save state to memory
+    { swap 4 * swap { Game I32 I32 } { Game } Arrow "i32.store" _asm } $store_i32 =
+    { $ball $paddle } =
+    4 paddle Paddle.position store_i32
+    5 paddle Paddle.speed store_i32
+    0 ball Ball.x store_i32
+    1 ball Ball.y store_i32
+    2 ball Ball.dx store_i32
+    3 ball Ball.dy store_i32
+} $Game.set_state =
+
+{ # Main loop
+
+    {Game} {Game} Arrow "call $draw" _asm
+    {Game} {Game} Arrow "call $update" _asm
+
+    # Await next frame
+    { Game } { Game } Arrow { "js" "nextFrame" } import @
+} $Game.loop =
+
+{
+    { width 2 / 300 1 1 } pack Ball make
+    { width 2 / Brick.Width 2 / - 0 } pack Paddle make
+    Game.set_state
+} $Game.init =
+
+{ Game } { Game.loop } $loop export
+{ Game } { Game.init } $init export
+
+{ Game } {
+    Game.get_state
+    Game.update
+    Game.set_state
+} $update export
+
+{Game} {
+    Game.get_state
+    Game.draw
+    pop pop
+} $draw export
+
+{ Game } { # Stop moving the paddle
+    Game.get_state
+    $paddle =
+    { paddle unpack pop 0 } pack Paddle make
+    Game.set_state
+} $arrow_up export
+
+{ Game } {
+    Game.get_state
+    { $ball $paddle } =
+    ball unpack { $x $y $dx $dy } =
+    { width 2 / Ball.Width 2 / - 300 1 2 } pack Ball make
+    paddle
+    Game.set_state
+} $space_down export
+
+{ Game } {
+    Game.get_state
+    $paddle =
+    { paddle unpack pop Paddle.Speed } pack Paddle make
+    Game.set_state
+} $arrow_right_down export
+
+{ Game } {
+    Game.get_state
+    $paddle =
+    { paddle unpack pop 0 Paddle.Speed - } pack Paddle make
+    Game.set_state
+} $arrow_left_down export
