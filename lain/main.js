@@ -14,14 +14,14 @@ function init() {
 	// Lain
 	const loader = new THREE.TextureLoader();
 	sprite = new THREE.Sprite(new THREE.SpriteMaterial({
-		map: loader.load('http://me.dvtate.com/imgs/standing_single.png'),
+		map: loader.load('http://ridder.xyz/imgs/standing_single.png'),
 		alphaTest: 0.05,
 		transparent: false,
 	}));
 	scene.add( sprite );
 	
 	// Ring mesh
-	const ringTexture = loader.load('http://me.dvtate.com/imgs/middle_ring_tex.png');
+	const ringTexture = loader.load('http://ridder.xyz/imgs/middle_ring_tex.png');
 	ringTexture.wrapT = THREE.RepeatWrapping;
 	ring = new THREE.Mesh(
 		new THREE.CylinderGeometry(.3, .3, .02, 20, 32, true),
