@@ -3,6 +3,14 @@
 	<head>
 		<title>Lain</title>
 		<script src="https://cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
+		<script type="importmap">
+		  {
+		    "imports": {
+		      "three": "https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.module.js",
+		      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.134.0/examples/jsm/"
+		    }
+		  }
+		</script>
 		<style>
 		h1 {
 			color: #fff;
@@ -27,7 +35,7 @@
 	</head>
 	<body>
 		<audio src="https://lainzine.org/bzz.ogg" autoplay loop></audio>
-		<script src='main.js'></script>
+		<script src='main.js' type="module"></script>
 		<h1>Welcome to ring 0</h1>
 		<noscript>How based of you to have disabled javascript... I could have made this a gif but then would be pretty lame tbh</noscript>
 	</body>

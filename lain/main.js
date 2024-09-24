@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+
 // State vars
 let camera, scene, renderer, sprite, ring;
 
