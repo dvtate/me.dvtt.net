@@ -5,6 +5,18 @@ let camera, scene, renderer, sprite, ring;
 
 // Setup
 function init() {
+	// Audio on click
+	let playing = false;
+	const audioElem = document.querySelector('audio');
+	const h1Elem = document.querySelector('h1');
+	const audioToggle = () => {
+		if (playing)
+			audioElem.pause();
+		else
+			audioElem.play()
+		playing = !playing;
+	};
+	h1Elem.onclick = audioToggle;
 
 	// Camera
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
@@ -42,7 +54,8 @@ function init() {
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
-	
+
+	renderer.domElement.onclick = audioToggle;
 }
 
 // Animation loop
